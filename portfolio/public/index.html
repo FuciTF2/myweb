@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">Your Name</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#repos">GitHub</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="about">
+    <div class="hero-inner">
+      <p class="hero-greeting">Hey, I'm Your Name 👋</p>
+      <h1 class="hero-title">
+        I build things<br/>for the web.
+      </h1>
+      <p class="hero-bio">
+        Full-stack developer based somewhere cool. I like clean code, thoughtful interfaces,
+        and shipping projects that are actually useful. Here's some of what I've been working on.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">See my work</a>
+        <a href="mailto:you@example.com" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <h2 class="section-title">Selected Projects</h2>
+
+    <div class="projects-list">
+
+      <article class="project-item">
+        <div class="project-meta">
+          <span class="project-tag">Web App</span>
+          <span class="project-year">2024</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">Project Alpha</h3>
+          <p class="project-desc">
+            A placeholder for your best project. Describe what it does, what problem it solves,
+            and why you built it. Keep it short and honest.
+          </p>
+          <div class="project-stack">
+            <span>React</span><span>Node.js</span><span>PostgreSQL</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="#" class="link-arrow">Live demo →</a>
+          <a href="#" class="link-plain">GitHub</a>
+        </div>
+      </article>
+
+      <article class="project-item">
+        <div class="project-meta">
+          <span class="project-tag">CLI Tool</span>
+          <span class="project-year">2024</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">Project Beta</h3>
+          <p class="project-desc">
+            Another placeholder. A command-line tool that automates something tedious.
+            Replace with your real project description.
+          </p>
+          <div class="project-stack">
+            <span>Python</span><span>Typer</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="#" class="link-arrow">GitHub →</a>
+        </div>
+      </article>
+
+      <article class="project-item">
+        <div class="project-meta">
+          <span class="project-tag">API</span>
+          <span class="project-year">2023</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">Project Gamma</h3>
+          <p class="project-desc">
+            Third placeholder. A REST API with auth, caching, and rate limiting.
+            Fill in with your actual project when ready.
+          </p>
+          <div class="project-stack">
+            <span>Go</span><span>Redis</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="#" class="link-arrow">GitHub →</a>
+        </div>
+      </article>
+
+      <article class="project-item">
+        <div class="project-meta">
+          <span class="project-tag">Mobile</span>
+          <span class="project-year">2023</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">Project Delta</h3>
+          <p class="project-desc">
+            Fourth placeholder. A cross-platform mobile app for something useful.
+            Swap in your own details here.
+          </p>
+          <div class="project-stack">
+            <span>React Native</span><span>Expo</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="#" class="link-arrow">App Store →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- GITHUB REPOS -->
+  <section class="section section--tinted" id="repos">
+    <div class="repos-header">
+      <h2 class="section-title">GitHub Repos</h2>
+      <a href="https://github.com/your-github-username" target="_blank" class="link-plain">View all →</a>
+    </div>
+    <p class="repos-sub">Public repositories, sorted by most recently updated.</p>
+
+    <div id="repos-grid" class="repos-grid">
+      <div class="repo-skeleton"></div>
+      <div class="repo-skeleton"></div>
+      <div class="repo-skeleton"></div>
+      <div class="repo-skeleton"></div>
+      <div class="repo-skeleton"></div>
+      <div class="repo-skeleton"></div>
+    </div>
+
+    <div id="repos-error" class="repos-error hidden">
+      ⚠️ Couldn't load repos. Set your GitHub username in <code>server.js</code>.
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="contact-inner">
+      <h2 class="section-title">Let's talk.</h2>
+      <p class="contact-sub">
+        Whether it's a project, a question, or just a hello — feel free to reach out.
+      </p>
+      <a href="mailto:you@example.com" class="btn btn-primary">Say hello →</a>
+      <div class="social-links">
+        <a href="https://github.com/your-github-username" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>© 2024 Your Name</span>
+    <span>Built with Node.js</span>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

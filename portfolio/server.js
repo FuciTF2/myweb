@@ -49,10 +49,14 @@ app.get("/api/repos", async (req, res) => {
   }
 });
 
-// Serve main page
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
-});
+// Page routes
+app.get("/",           (req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
+app.get("/about",      (req, res) => res.sendFile(path.join(__dirname, "public", "about.html")));
+app.get("/portfolio",  (req, res) => res.sendFile(path.join(__dirname, "public", "portfolio.html")));
+app.get("/playground", (req, res) => res.sendFile(path.join(__dirname, "public", "playground.html")));
+app.get("/game",       (req, res) => res.sendFile(path.join(__dirname, "public", "game.html")));
+app.get("/lore",       (req, res) => res.sendFile(path.join(__dirname, "public", "lore.html")));
+app.get("/chatbot",    (req, res) => res.sendFile(path.join(__dirname, "public", "chatbot.html")));
 
 app.listen(PORT, () => {
   console.log(`\n🚀 Portfolio running at http://localhost:${PORT}\n`);

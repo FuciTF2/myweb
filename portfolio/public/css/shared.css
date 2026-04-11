@@ -246,10 +246,12 @@ a { color: inherit; text-decoration: none; }
     background: var(--bg);
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 2.5rem;
+    justify-content: flex-start;
+    padding: 5rem 2rem 2rem;
+    gap: 2rem;
     font-size: 1.1rem;
     z-index: 105;
+    overflow-y: auto;
   }
 
   .nav-links.open { display: flex; }

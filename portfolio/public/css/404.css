@@ -1,0 +1,42 @@
+/* 404.css */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.not-found {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  gap: 1.25rem;
+}
+
+.not-found-code {
+  font-family: var(--font-serif);
+  font-size: clamp(5rem, 20vw, 10rem);
+  font-weight: 400;
+  color: var(--text-dim);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.not-found-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.not-found-msg {
+  font-size: 0.975rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.75;
+}

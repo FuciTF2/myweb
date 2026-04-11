@@ -59,6 +59,7 @@ app.get("/lore",       (req, res) => res.sendFile(path.join(__dirname, "public",
 app.get("/william",    (req, res) => res.sendFile(path.join(__dirname, "public", "william.html")));
 app.get("/henry",      (req, res) => res.sendFile(path.join(__dirname, "public", "henry.html")));
 app.get("/frederick",  (req, res) => res.sendFile(path.join(__dirname, "public", "frederick.html")));
+app.get("/samuel",     (req, res) => res.sendFile(path.join(__dirname, "public", "samuel.html")));
 app.get("/andrew",     (req, res) => res.sendFile(path.join(__dirname, "public", "andrew.html")));
 app.get("/chatbot",    (req, res) => res.sendFile(path.join(__dirname, "public", "chatbot.html")));
 

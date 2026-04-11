@@ -1,0 +1,18 @@
+/* samuel.css — overrides for the architect's page */
+
+/* Red warning banner variant */
+.header-warning--red {
+  color: var(--red) !important;
+  border-color: var(--red) !important;
+  background: rgba(139, 32, 32, 0.08);
+  opacity: 1 !important;
+  line-height: 1.8 !important;
+}
+
+/* Priority target stamp in red */
+.stamp--top {
+  color: var(--red);
+  border-color: var(--red);
+  font-size: 1.6rem;
+  letter-spacing: 0.25em;
+}

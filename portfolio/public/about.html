@@ -4,6 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — WillDevBrook</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="WillDevBrook" />
+  <meta property="og:title" content="About — WillDevBrook" />
+  <meta property="og:description" content="Developer based in the Czech Republic. I build things that interest me and put them on the internet." />
+  <meta property="og:url" content="https://willdevbrook.onrender.com" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@WillDBrook" />
+  <meta name="twitter:title" content="About — WillDevBrook" />
+  <meta name="twitter:description" content="Developer based in the Czech Republic. I build things that interest me and put them on the internet." />
+  <meta name="description" content="Developer based in the Czech Republic. I build things that interest me and put them on the internet." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -30,6 +41,13 @@
   </div>
 
   <main class="about-main section">
+
+    <div class="about-block activity-block">
+      <h2 class="about-heading">Latest activity</h2>
+      <div id="activity-widget" class="activity-widget">
+        <div class="activity-loading">fetching...</div>
+      </div>
+    </div>
 
     <div class="about-block">
       <h2 class="about-heading">Who I am</h2>
@@ -103,10 +121,10 @@
           <span class="contact-link-label">Twitter / X</span>
           <span class="contact-link-value">@WillDBrook</span>
         </a>
-        <a href="mailto:nypljan51@email.com" class="contact-link">
+        <a href="mailto:your@email.com" class="contact-link">
           <span class="contact-link-icon">@</span>
           <span class="contact-link-label">Email</span>
-          <span class="contact-link-value">nypljan51@email.com</span>
+          <span class="contact-link-value">your@email.com</span>
         </a>
       </div>
     </div>
@@ -114,13 +132,51 @@
   </main>
 
   <footer class="footer">
-    <span>WillDevBrook</span>
+    <span>WillDevBrook<a href="/chatbot" class="secret-link">.</a></span>
     <span>
       <a href="https://github.com/FuciTF2" target="_blank">GitHub</a>
       &nbsp;·&nbsp;
       <a href="https://x.com/WillDBrook" target="_blank">Twitter / X</a>
     </span>
   </footer>
+
   <script src="/js/nav.js"></script>
+  <script>
+    function timeAgo(dateStr) {
+      const diff = Date.now() - new Date(dateStr).getTime();
+      const mins = Math.floor(diff / 60000);
+      const hours = Math.floor(diff / 3600000);
+      const days = Math.floor(diff / 86400000);
+      if (mins < 60) return `${mins}m ago`;
+      if (hours < 24) return `${hours}h ago`;
+      if (days < 30) return `${days}d ago`;
+      return `${Math.floor(days / 30)}mo ago`;
+    }
+
+    async function loadActivity() {
+      const widget = document.getElementById('activity-widget');
+      try {
+        const res = await fetch('/api/activity');
+        const data = await res.json();
+
+        if (!data.summary) {
+          widget.innerHTML = '<p class="activity-empty">nothing recent — probably thinking.</p>';
+          return;
+        }
+
+        widget.innerHTML = `
+          <a href="${data.repoUrl}" target="_blank" rel="noopener" class="activity-item">
+            <span class="activity-dot"></span>
+            <span class="activity-summary">${data.summary}</span>
+            <span class="activity-time">${timeAgo(data.time)}</span>
+          </a>
+        `;
+      } catch (err) {
+        widget.innerHTML = '<p class="activity-empty">couldn\'t load activity right now.</p>';
+      }
+    }
+
+    loadActivity();
+  </script>
 </body>
 </html>

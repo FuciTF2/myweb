@@ -118,19 +118,6 @@
   background: rgba(0,0,0,0.6);
 }
 
-/* Responsive */
-@media (max-width: 680px) {
-  .game-header-inner {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .game-meta { flex-direction: row; flex-wrap: wrap; gap: 1.25rem; }
-
-  /* Hide iframe on mobile, show message instead */
-  .game-frame-wrapper { display: none; }
-  .game-mobile-block { display: flex; }
-}
-
 /* Mobile block — hidden on desktop */
 .game-mobile-block {
   display: none;
@@ -161,4 +148,17 @@
   font-weight: 300;
   line-height: 1.7;
   max-width: 300px;
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+  .game-header-inner {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .game-meta { flex-direction: row; flex-wrap: wrap; gap: 1.25rem; }
+
+  /* Hide iframe on mobile, show message instead */
+  .game-frame-wrapper { display: none; }
+  .game-mobile-block { display: flex; }
 }

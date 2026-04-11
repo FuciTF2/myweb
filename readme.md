@@ -1,0 +1,78 @@
+# 🌐 myweb
+
+This repository contains the source code for my personal website:
+👉 ** https://willdevbrook.onrender.com/ **
+
+---
+
+## 👋 Hey, I'm Will
+
+I make whatever I feel like making.
+
+Games, tools, websites, experiments — if it seemed like a good idea at the time, it's probably somewhere on here.
+
+There’s no strict theme and no posting schedule — just things that spark curiosity (or chaos).
+
+---
+
+## 🧪 What you'll find on the site
+
+* 🛠️ **Small tools & experiments**
+  Interactive stuff you can actually play with
+  *(including a calculator with a very important **banana mode** 🍌)*
+
+* 🎮 **Side-scrolling shooter**
+  Written entirely in vanilla JavaScript
+
+  > One file. 1000+ lines. Zero regrets.
+
+* 🧩 **Random projects**
+  Half-baked ideas, finished experiments, and everything in between
+
+**In short:**
+Serious and ridiculous projects living together in harmony.
+
+---
+
+## 🧰 Tech Stack
+
+* HTML
+* CSS
+* Vanilla JavaScript
+
+No frameworks.
+No build tools.
+No nonsense.
+
+Just plain web stuff — because that’s what I felt like using.
+
+---
+
+## 📦 Why this repo exists
+
+This is the home for the code behind my little corner of the internet.
+
+Feel free to:
+
+* Explore 👀
+* Take inspiration 💡
+* Borrow or reuse code 🔧
+
+If you find something useful, go ahead and use it — just don’t forget to have fun with it.
+
+---
+
+## 🚀 Want to see the site?
+
+👉 ** https://willdevbrook.onrender.com/ **
+
+---
+
+Made with whatever mood I was in at the time.
+
+If you like weird little projects, come say hi.
+
+---
+
+**Will**
+*Making stuff because why not*

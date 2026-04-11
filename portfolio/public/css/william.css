@@ -137,10 +137,12 @@
 }
 
 /* Responsive */
-@media (max-width: 640px) {
+@media (max-width: 680px) {
   .condition-item { grid-template-columns: 1fr; gap: 0.3rem; }
   .transform-item { grid-template-columns: 1fr; gap: 0.3rem; }
   .contra-item { grid-template-columns: 1fr; }
   .contra-a { text-align: left; }
   .contra-sep { display: none; }
+  .info-row { flex-direction: column; gap: 0.1rem; }
+  .info-key { width: auto; }
 }

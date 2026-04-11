@@ -119,12 +119,46 @@
 }
 
 /* Responsive */
-@media (max-width: 640px) {
+@media (max-width: 680px) {
   .game-header-inner {
     flex-direction: column;
     gap: 1.5rem;
   }
-
   .game-meta { flex-direction: row; flex-wrap: wrap; gap: 1.25rem; }
-  .game-frame-wrapper iframe { height: 60vh; }
+
+  /* Hide iframe on mobile, show message instead */
+  .game-frame-wrapper { display: none; }
+  .game-mobile-block { display: flex; }
+}
+
+/* Mobile block — hidden on desktop */
+.game-mobile-block {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 4rem 2rem;
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--bg-tinted);
+}
+
+.game-mobile-block .mobile-icon { font-size: 2rem; }
+
+.game-mobile-block h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.game-mobile-block p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 300px;
 }

@@ -87,3 +87,129 @@
   .tool-header { flex-direction: column; gap: 0.75rem; }
   .iframe-wrapper { height: 520px; box-shadow: 3px 3px 0 var(--ink); }
 }
+
+/* ===========================
+   Unit Converter
+   =========================== */
+.conv-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.conv-tab {
+  font-family: var(--font-head);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  border: 2px solid var(--border);
+  background: var(--bg-2);
+  color: var(--ink-3);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.conv-tab:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.conv-tab.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg);
+}
+
+.conv-body {
+  background: var(--bg-2);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.conv-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.conv-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.conv-field input,
+.conv-field select {
+  font-family: var(--font-head);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.65rem 0.9rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  width: 100%;
+  transition: border-color 0.15s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.conv-field input:focus,
+.conv-field select:focus {
+  outline: none;
+  border-color: var(--ink);
+}
+
+.conv-field input::placeholder { color: var(--ink-4); font-weight: 400; }
+
+.conv-result {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+  padding: 0.55rem 0.9rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.02em;
+  word-break: break-all;
+}
+
+.conv-equals {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink-4);
+  text-align: center;
+  user-select: none;
+}
+
+.conv-note {
+  display: none;
+  margin-top: 1.25rem;
+  padding: 0.65rem 1rem;
+  background: var(--bg-3);
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  font-family: var(--font-head);
+  font-size: 0.8rem;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
+@media (max-width: 560px) {
+  .conv-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .conv-equals { text-align: left; }
+  .conv-body { padding: 1.25rem; }
+}

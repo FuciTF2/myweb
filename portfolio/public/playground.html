@@ -69,6 +69,37 @@
     <div class="tool-block">
       <div class="tool-header">
         <div>
+          <h2 class="tool-title">Commit Message Generator</h2>
+          <p class="tool-desc">
+            Select a mood. Receive a commit message. Use it unironically.
+          </p>
+        </div>
+      </div>
+
+      <div class="commit-tool">
+        <div class="commit-moods">
+          <button class="mood-btn active" data-mood="believable">Believable</button>
+          <button class="mood-btn" data-mood="wacky">Wacky / Silly</button>
+          <button class="mood-btn" data-mood="desperate">Desperate</button>
+          <button class="mood-btn" data-mood="bullshit">Absolute Bullsh*t</button>
+        </div>
+
+        <div class="commit-output">
+          <div class="commit-message" id="commit-message">
+            <span class="commit-prefix" id="commit-prefix">fix:</span>
+            <span id="commit-text">click generate to get a message</span>
+          </div>
+          <button class="commit-copy" id="commit-copy" title="Copy to clipboard">copy</button>
+        </div>
+
+        <button class="btn btn-primary commit-generate" id="commit-generate">
+          Generate →
+        </button>
+      </div>
+    </div>
+    <div class="tool-block">
+      <div class="tool-header">
+        <div>
           <h2 class="tool-title">Unit Converter</h2>
           <p class="tool-desc">
             Converts between normal units and some that have absolutely no business being here.
@@ -91,5 +122,6 @@
 
   <script src="/js/nav.js"></script>
   <script src="/js/converter.js"></script>
+  <script src="/js/commits.js"></script>
 </body>
 </html>

@@ -89,6 +89,120 @@
 }
 
 /* ===========================
+   Commit Message Generator
+   =========================== */
+.commit-tool {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.commit-moods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.mood-btn {
+  font-family: var(--font-head);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.45rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  background: var(--bg);
+  color: var(--ink-3);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.mood-btn:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.mood-btn.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg);
+}
+
+.commit-output {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.4rem;
+  background: var(--bg-2);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: 3px 3px 0 var(--ink);
+  min-height: 64px;
+  transition: transform 0.15s;
+}
+
+.commit-output.pop {
+  animation: pop 0.2s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.commit-message {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 0.95rem;
+  color: var(--ink);
+  flex: 1;
+  line-height: 1.5;
+}
+
+.commit-prefix {
+  color: var(--accent);
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+
+.commit-copy {
+  font-family: var(--font-head);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  background: transparent;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  color: var(--ink-3);
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.commit-copy:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.commit-copy.copied {
+  border-color: #2a9d5c;
+  color: #2a9d5c;
+  background: rgba(42, 157, 92, 0.08);
+}
+
+.commit-generate {
+  align-self: flex-start;
+}
+
+@media (max-width: 680px) {
+  .commit-moods { gap: 0.4rem; }
+  .mood-btn { font-size: 0.78rem; padding: 0.4rem 0.8rem; }
+  .commit-message { font-size: 0.85rem; }
+  .commit-output { flex-wrap: wrap; }
+  .commit-copy { width: 100%; text-align: center; }
+}
+
+/* ===========================
    Unit Converter
    =========================== */
 .conv-tabs {

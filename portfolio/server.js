@@ -7,6 +7,16 @@ const PORT = process.env.PORT || 3000;
 
 // Replace with your GitHub username
 const GITHUB_USERNAME = "FuciTF2";
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN || null;
+
+function githubHeaders() {
+  const headers = {
+    "User-Agent": "portfolio-app",
+    Accept: "application/vnd.github.v3+json",
+  };
+  if (GITHUB_TOKEN) headers["Authorization"] = `token ${GITHUB_TOKEN}`;
+  return headers;
+}
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -15,12 +25,7 @@ app.get("/api/repos", async (req, res) => {
   try {
     const response = await fetch(
       `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=12`,
-      {
-        headers: {
-          "User-Agent": "portfolio-app",
-          Accept: "application/vnd.github.v3+json",
-        },
-      }
+      { headers: githubHeaders() }
     );
 
     if (!response.ok) {
@@ -54,12 +59,7 @@ app.get("/api/activity", async (req, res) => {
   try {
     const response = await fetch(
       `https://api.github.com/users/${GITHUB_USERNAME}/events/public?per_page=30`,
-      {
-        headers: {
-          "User-Agent": "portfolio-app",
-          Accept: "application/vnd.github.v3+json",
-        },
-      }
+      { headers: githubHeaders() }
     );
 
     if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);

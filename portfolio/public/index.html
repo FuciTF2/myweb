@@ -17,14 +17,14 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/shared.css" />
   <link rel="stylesheet" href="/css/index.css" />
 </head>
 <body>
 
   <nav class="nav">
-    <a href="/" class="nav-logo">WillDevBrook</a>
+    <a href="/" class="nav-logo">Will<span>Dev</span>Brook</a>
     <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav-links">
       <li><a href="/about">About</a></li>
@@ -35,59 +35,60 @@
   </nav>
 
   <section class="hero">
-    <div class="hero-inner">
-      <p class="hero-greeting">hey, I'm Will 👋</p>
-      <h1 class="hero-title">
-        I make whatever<br/>I feel like making.
-      </h1>
-      <p class="hero-bio">
-        Games, tools, websites, experiments — if it seemed like a good idea at the time,
-        it's probably somewhere on here. No theme, no schedule, just whatever comes out.
-        If that sounds like your kind of thing, stick around.
-      </p>
-      <div class="hero-actions">
-        <a href="/portfolio" class="btn btn-primary">See what I've built</a>
-        <a href="/about" class="btn btn-ghost">About me</a>
-      </div>
+    <p class="hero-greeting">hey, I'm Will 👋</p>
+    <h1 class="hero-title">
+      I make whatever<br/>
+      I <span class="squiggle">feel like</span><br/>
+      making<span class="accent">.</span>
+    </h1>
+    <p class="hero-bio">
+      Games, tools, websites, weird experiments — if it seemed like a good idea at the time,
+      it's probably on here somewhere. No theme, no schedule, no plan.
+      If that sounds like your kind of thing, stick around.
+    </p>
+    <div class="hero-actions">
+      <a href="/portfolio" class="btn btn-primary">See what I've built →</a>
+      <a href="/about" class="btn btn-ghost">About me</a>
     </div>
   </section>
 
-  <!-- Quick nav cards -->
+  <hr class="section-divider" />
+
   <div class="cards-section">
     <a href="/portfolio" class="nav-card">
       <div class="nav-card-top">
         <span class="nav-card-icon">📁</span>
-        <span class="nav-card-arrow">→</span>
+        <span class="nav-card-arrow">↗</span>
       </div>
       <h2 class="nav-card-title">Portfolio</h2>
-      <p class="nav-card-desc">All my public repos and projects, the serious ones and the ridiculous ones alike.</p>
+      <p class="nav-card-desc">All my public repos — the serious ones and the completely ridiculous ones alike.</p>
     </a>
 
     <a href="/playground" class="nav-card">
       <div class="nav-card-top">
         <span class="nav-card-icon">🧪</span>
-        <span class="nav-card-arrow">→</span>
+        <span class="nav-card-arrow">↗</span>
       </div>
       <h2 class="nav-card-title">Playground</h2>
-      <p class="nav-card-desc">Small tools and experiments you can actually use. Starting with a calculator that has a banana mode.</p>
+      <p class="nav-card-desc">Small tools you can actually use. Starting with a calculator that has a banana mode.</p>
     </a>
 
-    <a href="/game" class="nav-card nav-card--highlight">
+    <a href="/game" class="nav-card">
       <div class="nav-card-top">
         <span class="nav-card-icon">🎮</span>
-        <span class="nav-card-arrow">→</span>
+        <span class="nav-card-arrow">↗</span>
       </div>
       <h2 class="nav-card-title">The Game</h2>
-      <p class="nav-card-desc">A side-scrolling shooter written entirely in JS. One file, 1000+ lines, zero regrets.</p>
+      <p class="nav-card-desc">A side-scrolling shooter in vanilla JS. One file. 1000+ lines. Zero regrets.</p>
     </a>
 
     <a href="/about" class="nav-card">
       <div class="nav-card-top">
         <span class="nav-card-icon">👤</span>
-        <span class="nav-card-arrow">→</span>
+        <span class="nav-card-arrow">↗</span>
       </div>
       <h2 class="nav-card-title">About</h2>
-      <p class="nav-card-desc">A bit about who I am, what I use, and how to get in touch.</p>
+      <p class="nav-card-desc">A bit about who I am, what I use, and how to find me.</p>
     </a>
   </div>
 

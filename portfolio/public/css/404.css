@@ -1,42 +1,65 @@
-/* 404.css */
+/* chatbot.css */
 
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.not-found {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.found-banner {
   text-align: center;
-  padding: 4rem 2rem;
-  gap: 1.25rem;
+  padding: 0.6rem;
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
-.not-found-code {
-  font-family: var(--font-serif);
-  font-size: clamp(5rem, 20vw, 10rem);
-  font-weight: 400;
-  color: var(--text-dim);
-  line-height: 1;
-  letter-spacing: -0.04em;
+.chatbot-intro {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 3.5rem 2rem 2.5rem;
+  border-bottom: 2px solid var(--border);
 }
 
-.not-found-title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 5vw, 3rem);
-  font-weight: 400;
-  color: var(--text);
-  letter-spacing: -0.02em;
+.chatbot-intro h1 {
+  font-family: var(--font-head);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 1rem;
 }
 
-.not-found-msg {
+.chatbot-intro p {
   font-size: 0.975rem;
-  color: var(--text-muted);
-  font-weight: 300;
+  color: var(--ink-2);
   line-height: 1.75;
+  max-width: 520px;
+  margin-bottom: 0.75rem;
+}
+
+.chatbot-intro p em { font-style: italic; color: var(--accent); }
+
+.chatbot-intro-small {
+  font-family: var(--font-head) !important;
+  font-size: 0.82rem !important;
+  color: var(--ink-4) !important;
+  font-style: normal !important;
+}
+
+.chatbot-frame-wrapper {
+  width: 100%;
+  background: var(--bg-2);
+  border-bottom: 2px solid var(--border);
+}
+
+.chatbot-frame-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: 75vh;
+  min-height: 500px;
+  border: none;
+}
+
+@media (max-width: 680px) {
+  .chatbot-intro { padding: 2.5rem 1.25rem 2rem; }
+  .chatbot-frame-wrapper iframe { height: 80vh; }
 }

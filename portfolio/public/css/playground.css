@@ -1,59 +1,58 @@
 /* playground.css */
 
 .tool-block {
-  margin-bottom: 4rem;
-  padding-bottom: 4rem;
-  border-bottom: 1px solid var(--border-soft);
+  margin-bottom: 3.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 2px solid var(--border);
 }
 
-.tool-block:last-of-type {
-  border-bottom: none;
-}
+.tool-block:last-of-type { border-bottom: none; }
 
 .tool-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .tool-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-head);
   font-size: 1.4rem;
-  font-weight: 400;
-  color: var(--text);
-  letter-spacing: -0.01em;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
 }
 
 .tool-desc {
+  font-family: var(--font-head);
   font-size: 0.875rem;
-  color: var(--text-muted);
+  color: var(--ink-3);
   line-height: 1.65;
-  font-weight: 300;
   max-width: 480px;
 }
 
 .tool-source-link {
+  font-family: var(--font-head);
   font-size: 0.8rem;
-  color: var(--text-dim);
+  font-weight: 700;
+  color: var(--ink-4);
   white-space: nowrap;
   transition: color 0.15s;
   padding-top: 0.25rem;
 }
 
-.tool-source-link:hover { color: var(--text-muted); }
+.tool-source-link:hover { color: var(--accent); }
 
-/* iframe */
 .iframe-wrapper {
   width: 100%;
-  border: 1px solid var(--border-soft);
-  border-radius: 10px;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
   overflow: hidden;
-  background: var(--bg-tinted);
-  /* height controlled to show the calculator comfortably */
+  background: var(--bg-2);
   height: 600px;
+  box-shadow: 4px 4px 0 var(--ink);
 }
 
 .iframe-wrapper iframe {
@@ -63,7 +62,6 @@
   display: block;
 }
 
-/* Placeholder */
 .tool-placeholder {
   display: flex;
   flex-direction: column;
@@ -71,23 +69,21 @@
   justify-content: center;
   gap: 0.75rem;
   padding: 3rem;
-  border: 1px dashed var(--border);
-  border-radius: 8px;
-  color: var(--text-dim);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  color: var(--ink-4);
   text-align: center;
 }
 
-.placeholder-icon {
-  font-size: 1.5rem;
-  line-height: 1;
-}
+.placeholder-icon { font-size: 1.5rem; }
 
 .tool-placeholder p {
+  font-family: var(--font-head);
   font-size: 0.875rem;
-  font-weight: 300;
+  font-weight: 500;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 680px) {
   .tool-header { flex-direction: column; gap: 0.75rem; }
-  .iframe-wrapper { height: 500px; }
+  .iframe-wrapper { height: 520px; box-shadow: 3px 3px 0 var(--ink); }
 }

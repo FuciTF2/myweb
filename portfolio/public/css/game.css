@@ -151,3 +151,142 @@
   .game-frame-wrapper { display: none; }
   .game-mobile-block { display: flex; }
 }
+
+/* ===========================
+   Cheats Section
+   =========================== */
+.cheats-section {
+  border-top: 2px solid var(--border);
+  border-bottom: 2px solid var(--border);
+  background: var(--bg-2);
+  padding: 1.5rem 2rem;
+}
+
+.cheats-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.cheats-step {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cheats-trigger {
+  align-self: flex-start;
+  font-size: 0.82rem;
+  padding: 0.5rem 1.1rem;
+}
+
+.cheats-note {
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  color: var(--ink-4);
+  font-style: italic;
+}
+
+/* Confirm step */
+.cheats-confirm-msg {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.cheats-confirm-sub {
+  font-family: var(--font-head);
+  font-size: 0.82rem;
+  color: var(--ink-3);
+}
+
+.cheats-confirm-btns {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.cheats-confirm-btns .btn {
+  font-size: 0.82rem;
+  padding: 0.5rem 1.1rem;
+}
+
+/* Cheats list */
+.cheats-shame-msg {
+  font-family: var(--font-head);
+  font-size: 0.875rem;
+  color: var(--ink-3);
+  line-height: 1.65;
+  padding: 0.9rem 1.1rem;
+  background: var(--bg-3);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.cheats-shame-msg span {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--ink-2);
+  font-weight: 600;
+}
+
+kbd {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.cheats-list {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.cheat-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1rem;
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+  align-items: baseline;
+  transition: background 0.15s;
+}
+
+.cheat-row:last-child { border-bottom: none; }
+.cheat-row:nth-child(even) { background: var(--bg-2); }
+.cheat-row:hover { background: var(--bg-3); }
+
+.cheat-code {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+}
+
+.cheat-desc {
+  font-family: var(--font-head);
+  font-size: 0.82rem;
+  color: var(--ink-3);
+  line-height: 1.5;
+}
+
+.cheats-hide {
+  align-self: flex-start;
+  font-size: 0.82rem;
+  padding: 0.5rem 1.1rem;
+}
+
+@media (max-width: 680px) {
+  .cheats-section { padding: 1.5rem 1.25rem; }
+  .cheat-row { grid-template-columns: 100px 1fr; gap: 0.75rem; }
+}

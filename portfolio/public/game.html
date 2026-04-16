@@ -17,14 +17,14 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/shared.css" />
   <link rel="stylesheet" href="/css/game.css" />
 </head>
 <body>
 
   <nav class="nav">
-    <a href="/" class="nav-logo">WillDevBrook</a>
+    <a href="/" class="nav-logo">Will<span>Dev</span>Brook</a>
     <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav-links">
       <li><a href="/about">About</a></li>
@@ -70,6 +70,62 @@
     </a>
   </div>
 
+  <!-- Cheats section -->
+  <div class="cheats-section">
+    <div class="cheats-inner">
+
+      <!-- Step 1: Button -->
+      <div class="cheats-step" id="cheats-step-1">
+        <button class="btn btn-ghost cheats-trigger" id="cheats-btn">
+          Show cheats
+        </button>
+        <span class="cheats-note">you didn't see this</span>
+      </div>
+
+      <!-- Step 2: Confirm -->
+      <div class="cheats-step hidden" id="cheats-step-2">
+        <p class="cheats-confirm-msg">Are you sure you want to use cheats?</p>
+        <p class="cheats-confirm-sub">Think carefully. There are people watching.</p>
+        <div class="cheats-confirm-btns">
+          <button class="btn btn-primary" id="cheats-yes">Yes, I have no shame</button>
+          <button class="btn btn-ghost" id="cheats-no">No, I'm better than this</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Cheats list -->
+      <div class="cheats-step hidden" id="cheats-step-3">
+        <p class="cheats-shame-msg">
+          Wow. Okay. Here you go then.<br/>
+          <span>Press <kbd>C</kbd> in-game to open the cheat console. Type the code and hit Enter.</span>
+        </p>
+        <div class="cheats-list">
+          <div class="cheat-row">
+            <span class="cheat-code">god</span>
+            <span class="cheat-desc">Invincibility. Classic choice for someone who clearly needs it.</span>
+          </div>
+          <div class="cheat-row">
+            <span class="cheat-code">ammo</span>
+            <span class="cheat-desc">Infinite ammo. Running out of bullets was apparently too much of a challenge.</span>
+          </div>
+          <div class="cheat-row">
+            <span class="cheat-code">money</span>
+            <span class="cheat-desc">Adds 1000 currency. Can't earn it legitimately, huh.</span>
+          </div>
+          <div class="cheat-row">
+            <span class="cheat-code">fastshoot</span>
+            <span class="cheat-desc">Increased fire rate. Self explanatory, much like your skill issues.</span>
+          </div>
+          <div class="cheat-row">
+            <span class="cheat-code">devmode</span>
+            <span class="cheat-desc">Shows hitboxes. This one is actually kind of cool. You're forgiven for this one.</span>
+          </div>
+        </div>
+        <button class="btn btn-ghost cheats-hide" id="cheats-hide">Hide cheats</button>
+      </div>
+
+    </div>
+  </div>
+
   <div class="game-mobile-block">
     <span class="mobile-icon">🖥️</span>
     <h2>Desktop only.</h2>
@@ -86,5 +142,29 @@
   </footer>
 
   <script src="/js/nav.js"></script>
+  <script>
+    const step1 = document.getElementById("cheats-step-1");
+    const step2 = document.getElementById("cheats-step-2");
+    const step3 = document.getElementById("cheats-step-3");
+
+    function show(el) { el.classList.remove("hidden"); }
+    function hide(el) { el.classList.add("hidden"); }
+
+    document.getElementById("cheats-btn").addEventListener("click", () => {
+      hide(step1); show(step2);
+    });
+
+    document.getElementById("cheats-yes").addEventListener("click", () => {
+      hide(step2); show(step3);
+    });
+
+    document.getElementById("cheats-no").addEventListener("click", () => {
+      hide(step2); show(step1);
+    });
+
+    document.getElementById("cheats-hide").addEventListener("click", () => {
+      hide(step3); show(step1);
+    });
+  </script>
 </body>
 </html>

@@ -203,6 +203,278 @@
 }
 
 /* ===========================
+   Mood Colour Picker
+   =========================== */
+.colour-tool {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Steps */
+.cq-flow { position: relative; }
+
+.cq-step {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  animation: slideIn 0.25s ease;
+}
+
+.cq-step.active { display: flex; }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.cq-question {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+}
+
+.cq-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cq-btn {
+  font-family: var(--font-head);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.75rem 1.1rem;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--ink-2);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+}
+
+.cq-btn:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+  transform: translateX(4px);
+}
+
+.cq-btn.selected {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg);
+  transform: translateX(4px);
+}
+
+/* Progress dots */
+.cq-progress {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.cq-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: all 0.2s;
+}
+
+.cq-dot.active { background: var(--ink); transform: scale(1.2); }
+.cq-dot.done { background: var(--accent); transform: scale(1); }
+
+/* Result */
+.cq-result {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  animation: slideIn 0.3s ease;
+}
+
+.cq-swatch {
+  width: 100%;
+  height: 120px;
+  border-radius: var(--radius);
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: background 0.4s ease;
+}
+
+.cq-result-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.cq-colour-name {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.cq-colour-hex {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 0.875rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.cq-colour-desc {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  line-height: 1.65;
+  margin-top: 0.25rem;
+}
+
+.cq-result-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cq-restart { padding: 0.5rem 1.2rem; font-size: 0.875rem; }
+
+@media (max-width: 680px) {
+  .cq-btn:hover { transform: none; }
+  .cq-btn.selected { transform: none; }
+  .cq-swatch { height: 90px; }
+}
+
+/* ===========================
+   Canvas Toy
+   =========================== */
+.canvas-tool {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.canvas-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-2);
+  border-bottom: 2px solid var(--ink);
+}
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding-right: 0.75rem;
+  border-right: 1px solid var(--border);
+}
+
+.toolbar-group:last-child {
+  border-right: none;
+  padding-right: 0;
+  margin-left: auto;
+}
+
+.toolbar-label {
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ink-4);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tool-btn {
+  font-size: 1rem;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+  padding: 0;
+}
+
+.tool-btn:hover { background: var(--bg-3); border-color: var(--border); }
+.tool-btn.active { background: var(--ink); border-color: var(--ink); }
+
+/* Colour swatches */
+.toolbar-colours {
+  flex-wrap: wrap;
+  max-width: 180px;
+  gap: 4px !important;
+}
+
+.colour-swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.colour-swatch:hover { transform: scale(1.2); border-color: var(--ink); }
+.colour-swatch.active { border-color: var(--ink); transform: scale(1.15); box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--ink); }
+
+.colour-picker-input {
+  width: 34px;
+  height: 34px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  padding: 2px;
+  cursor: pointer;
+  background: none;
+  transition: border-color 0.15s;
+}
+
+.colour-picker-input:hover { border-color: var(--ink); }
+
+.canvas-slider {
+  width: 80px;
+  accent-color: var(--ink);
+  cursor: pointer;
+}
+
+/* Canvas itself */
+.canvas-wrap {
+  width: 100%;
+  background: #fff;
+  cursor: crosshair;
+  line-height: 0;
+}
+
+#drawing-canvas {
+  display: block;
+  width: 100%;
+  touch-action: none;
+}
+
+@media (max-width: 680px) {
+  .canvas-toolbar { gap: 0.4rem; padding: 0.6rem 0.75rem; }
+  .toolbar-colours { max-width: 140px; }
+  .canvas-slider { width: 60px; }
+  .toolbar-group { padding-right: 0.5rem; }
+}
+
+/* ===========================
    Unit Converter
    =========================== */
 .conv-tabs {

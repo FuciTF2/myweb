@@ -97,7 +97,99 @@
         </button>
       </div>
     </div>
+
     <div class="tool-block">
+      <div class="tool-header">
+        <div>
+          <h2 class="tool-title">Mood Colour Picker</h2>
+          <p class="tool-desc">
+            Answer five carefully designed questions to receive the colour that best represents your current emotional state. This is science.
+          </p>
+        </div>
+      </div>
+
+      <div class="colour-tool" id="colour-tool">
+
+        <!-- Questions -->
+        <div class="cq-flow" id="cq-flow">
+
+          <div class="cq-step active" data-step="0">
+            <p class="cq-question">How are you feeling right now?</p>
+            <div class="cq-options">
+              <button class="cq-btn" data-value="a">Like a person who has their life together (lying)</button>
+              <button class="cq-btn" data-value="b">Somewhere between a nap and a breakdown</button>
+              <button class="cq-btn" data-value="c">I have consumed too much caffeine and I can hear colours</button>
+              <button class="cq-btn" data-value="d">Legally I cannot answer this question</button>
+            </div>
+          </div>
+
+          <div class="cq-step" data-step="1">
+            <p class="cq-question">What did you last eat?</p>
+            <div class="cq-options">
+              <button class="cq-btn" data-value="a">A meal with vegetables in it like a functioning member of society</button>
+              <button class="cq-btn" data-value="b">I found something and I ate it</button>
+              <button class="cq-btn" data-value="c">The concept of food. Spiritually</button>
+              <button class="cq-btn" data-value="d">My fourth coffee. Coffee is a food</button>
+            </div>
+          </div>
+
+          <div class="cq-step" data-step="2">
+            <p class="cq-question">If your current mood were a weather event, it would be:</p>
+            <div class="cq-options">
+              <button class="cq-btn" data-value="a">Light drizzle. Annoying but survivable</button>
+              <button class="cq-btn" data-value="b">Thunderstorm inside a bouncy castle</button>
+              <button class="cq-btn" data-value="c">Fog so thick the meteorologist just gave up and went home</button>
+              <button class="cq-btn" data-value="d">Clear skies. Suspiciously clear. Something is coming</button>
+            </div>
+          </div>
+
+          <div class="cq-step" data-step="3">
+            <p class="cq-question">When did you last go outside?</p>
+            <div class="cq-options">
+              <button class="cq-btn" data-value="a">Today. I touched grass. I am normal</button>
+              <button class="cq-btn" data-value="b">I opened a window. The outside came to me</button>
+              <button class="cq-btn" data-value="c">Outside and I are in a complicated relationship right now</button>
+              <button class="cq-btn" data-value="d">I looked outside once. Did not care for it</button>
+            </div>
+          </div>
+
+          <div class="cq-step" data-step="4">
+            <p class="cq-question">Pick a number. Any number.</p>
+            <div class="cq-options">
+              <button class="cq-btn" data-value="a">7. Obviously 7. Everyone picks 7</button>
+              <button class="cq-btn" data-value="b">A number so large it has no practical application</button>
+              <button class="cq-btn" data-value="c">Negative. Specifically negative</button>
+              <button class="cq-btn" data-value="d">I picked a letter instead. Deal with it</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Progress dots -->
+        <div class="cq-progress" id="cq-progress">
+          <span class="cq-dot active"></span>
+          <span class="cq-dot"></span>
+          <span class="cq-dot"></span>
+          <span class="cq-dot"></span>
+          <span class="cq-dot"></span>
+        </div>
+
+        <!-- Result -->
+        <div class="cq-result hidden" id="cq-result">
+          <div class="cq-swatch" id="cq-swatch"></div>
+          <div class="cq-result-info">
+            <p class="cq-colour-name" id="cq-colour-name"></p>
+            <p class="cq-colour-hex" id="cq-colour-hex"></p>
+            <p class="cq-colour-desc" id="cq-colour-desc"></p>
+          </div>
+          <div class="cq-result-actions">
+            <button class="commit-copy" id="cq-copy">copy hex</button>
+            <button class="btn btn-ghost cq-restart" id="cq-restart">Try again →</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
       <div class="tool-header">
         <div>
           <h2 class="tool-title">Unit Converter</h2>
@@ -107,6 +199,41 @@
         </div>
       </div>
       <div id="converter"></div>
+    </div>
+
+    <div class="tool-block">
+      <div class="tool-header">
+        <div>
+          <h2 class="tool-title">Canvas Toy</h2>
+          <p class="tool-desc">Draw something. Or don't. No one is watching.</p>
+        </div>
+      </div>
+
+      <div class="canvas-tool">
+        <div class="canvas-toolbar">
+          <div class="toolbar-group">
+            <button class="tool-btn active" data-tool="brush" title="Brush">✏️</button>
+            <button class="tool-btn" data-tool="particle" title="Particle Brush">✨</button>
+            <button class="tool-btn" data-tool="eraser" title="Eraser">🧹</button>
+            <button class="tool-btn" data-tool="bucket" title="Fill">🪣</button>
+          </div>
+          <div class="toolbar-group toolbar-size">
+            <label class="toolbar-label">Size</label>
+            <input type="range" id="brush-size" min="2" max="40" value="8" class="canvas-slider" />
+          </div>
+          <div class="toolbar-group toolbar-colours" id="colour-swatches"></div>
+          <div class="toolbar-group">
+            <input type="color" id="custom-colour" value="#e8622a" class="colour-picker-input" title="Custom colour" />
+          </div>
+          <div class="toolbar-group toolbar-actions">
+            <button class="tool-btn" id="canvas-clear" title="Clear canvas">🗑️</button>
+            <button class="tool-btn" id="canvas-save" title="Save image">💾</button>
+          </div>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="drawing-canvas"></canvas>
+        </div>
+      </div>
     </div>
 
   </main>
@@ -123,5 +250,7 @@
   <script src="/js/nav.js"></script>
   <script src="/js/converter.js"></script>
   <script src="/js/commits.js"></script>
+  <script src="/js/colourpicker.js"></script>
+  <script src="/js/canvas.js"></script>
 </body>
 </html>

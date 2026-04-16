@@ -54,6 +54,26 @@ app.get("/api/repos", async (req, res) => {
   }
 });
 
+// API route: visitor counter
+app.get("/api/visits", async (req, res) => {
+  try {
+    const url   = process.env.UPSTASH_REDIS_REST_URL;
+    const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+
+    if (!url || !token) return res.json({ count: null });
+
+    const response = await fetch(`${url}/incr/visitor_count`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    const data = await response.json();
+    res.json({ count: data.result });
+  } catch (err) {
+    console.error("Visit counter error:", err.message);
+    res.json({ count: null });
+  }
+});
+
 // API route: fetch latest GitHub activity
 app.get("/api/activity", async (req, res) => {
   try {

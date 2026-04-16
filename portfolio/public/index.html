@@ -93,7 +93,7 @@
   </div>
 
   <footer class="footer">
-    <span>WillDevBrook<a href="/chatbot" class="secret-link">.</a></span>
+    <span>WillDevBrook<a href="/chatbot" class="secret-link">.</a> <span class="visit-count" id="visit-count"></span></span>
     <span>
       <a href="https://github.com/FuciTF2" target="_blank">GitHub</a>
       &nbsp;·&nbsp;
@@ -102,5 +102,16 @@
   </footer>
 
   <script src="/js/nav.js"></script>
+  <script>
+    fetch('/api/visits')
+      .then(r => r.json())
+      .then(d => {
+        if (d.count) {
+          const el = document.getElementById('visit-count');
+          if (el) el.textContent = '· ' + Number(d.count).toLocaleString() + ' visits';
+        }
+      })
+      .catch(() => {});
+  </script>
 </body>
 </html>

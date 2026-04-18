@@ -143,6 +143,7 @@ app.get("/frederick",  (req, res) => res.sendFile(path.join(__dirname, "public",
 app.get("/samuel",     (req, res) => res.sendFile(path.join(__dirname, "public", "samuel.html")));
 app.get("/andrew",     (req, res) => res.sendFile(path.join(__dirname, "public", "andrew.html")));
 app.get("/chatbot",    (req, res) => res.sendFile(path.join(__dirname, "public", "chatbot.html")));
+app.get("/dorifto",    (req, res) => res.sendFile(path.join(__dirname, "public", "dorifto.html")));
 
 // 404 — must be last
 app.use((req, res) => {

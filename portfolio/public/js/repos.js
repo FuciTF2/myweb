@@ -30,8 +30,13 @@ function timeAgo(dateStr) {
   return `${Math.floor(months / 12)}y ago`;
 }
 
+// Map of repo names to internal project pages
+const PROJECT_PAGES = {
+  "Dorifto": "/dorifto",
+};
+
 function renderRepo(repo, index) {
-  const langColor = repo.language ? (LANG_COLORS[repo.language] || "#c8f060") : null;
+  const projectPage = PROJECT_PAGES[repo.name];
 
   return `
     <article class="repo-card" style="animation-delay: ${index * 0.05}s">
@@ -39,7 +44,7 @@ function renderRepo(repo, index) {
         <div class="repo-name">
           <a href="${repo.url}" target="_blank" rel="noopener">${repo.name}</a>
         </div>
-        ${repo.language ? `<span class="repo-lang" style="color:${langColor}; background: ${langColor}18">${repo.language}</span>` : ""}
+        ${repo.language ? `<span class="repo-lang">${repo.language}</span>` : ""}
       </div>
       <p class="repo-desc">${repo.description}</p>
       <div class="repo-footer">
@@ -52,6 +57,7 @@ function renderRepo(repo, index) {
           ${repo.forks}
         </span>
         <span class="repo-stat">Updated ${timeAgo(repo.updated)}</span>
+        ${projectPage ? `<a href="${projectPage}" class="repo-project-link">View project →</a>` : ""}
       </div>
     </article>
   `;

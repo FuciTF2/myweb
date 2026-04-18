@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dorifto — WillDevBrook</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="WillDevBrook" />
+  <meta property="og:title" content="Dorifto — WillDevBrook" />
+  <meta property="og:description" content="A drift racing game built in Python and Pygame. My first proper project." />
+  <meta property="og:url" content="https://willdevbrook.onrender.com/dorifto" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@WillDBrook" />
+  <meta name="twitter:title" content="Dorifto — WillDevBrook" />
+  <meta name="twitter:description" content="A drift racing game built in Python and Pygame. My first proper project." />
+  <meta name="description" content="A drift racing game built in Python and Pygame. My first proper project." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/shared.css" />
+  <link rel="stylesheet" href="/css/dorifto.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-logo">Will<span>Dev</span>Brook</a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="/about">About</a></li>
+      <li><a href="/portfolio" class="active">Portfolio</a></li>
+      <li><a href="/playground">Playground</a></li>
+      <li><a href="/game">The Game</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <a href="/portfolio" class="back-link">← Portfolio</a>
+    <p class="page-label">Project</p>
+    <h1>Dorifto</h1>
+    <p>A drift racing game built in Python. My first proper project — rough around the edges, held together with hope and pygame, and somehow works.</p>
+  </div>
+
+  <main class="dorifto-main">
+
+    <!-- GIF hero -->
+    <div class="dorifto-hero">
+      <img src="/images/dorifto-gameplay.gif" alt="Dorifto gameplay" class="dorifto-gif" />
+      <p class="media-caption">Actual gameplay. Yes those are drifts.</p>
+    </div>
+
+    <!-- Info + meta -->
+    <div class="dorifto-content">
+
+      <div class="dorifto-info">
+        <div class="info-block">
+          <h2>What is it</h2>
+          <p>
+            Dorifto is a top-down drift racing game where you drive around a track,
+            try not to fly off the edge, and score points by maintaining a drift angle.
+            The longer and harder the drift, the higher the score.
+            It has a HUD, an achievement system, NOS, a handbrake.
+          </p>
+          <p>
+            It's not polished. The collision detection has opinions.
+            But it runs, it's fun, and I built it from scratch, so I'm proud of it.
+          </p>
+        </div>
+
+        <div class="info-block">
+          <h2>Why it matters</h2>
+          <p>
+            This was my first proper project — the first time I sat down with no tutorial,
+            no guided exercise, and just built something because I wanted to see if I could.
+            Everything I've made since started here. It's where I figured out that I actually
+            enjoy building things, not just learning about building things.
+          </p>
+          <p>
+            It's written entirely in Python using Pygame. One of the few times I've touched
+            Python for something that isn't a script.
+          </p>
+        </div>
+
+        <div class="info-block">
+          <h2>Controls</h2>
+          <div class="controls-grid">
+            <div class="control-row"><kbd>W</kbd><span>Accelerate</span></div>
+            <div class="control-row"><kbd>S</kbd><span>Brake</span></div>
+            <div class="control-row"><kbd>A</kbd><span>Steer left</span></div>
+            <div class="control-row"><kbd>D</kbd><span>Steer right</span></div>
+            <div class="control-row"><kbd>Space</kbd><span>Handbrake (for drifts)</span></div>
+            <div class="control-row"><kbd>L-Shift</kbd><span>NOS / nitro</span></div>
+            <div class="control-row"><kbd>Esc</kbd><span>Exit</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dorifto-meta">
+        <div class="meta-card">
+          <div class="meta-row">
+            <span class="meta-key">Language</span>
+            <span class="meta-val">Python</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-key">Library</span>
+            <span class="meta-val">Pygame</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-key">Type</span>
+            <span class="meta-val">Desktop game</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-key">Status</span>
+            <span class="meta-val">Playable</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-key">First project</span>
+            <span class="meta-val">Yes</span>
+          </div>
+        </div>
+        <a href="https://github.com/FuciTF2/Dorifto" target="_blank" class="btn btn-primary dorifto-repo-btn">
+          View on GitHub →
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Screenshots -->
+    <div class="dorifto-screenshots">
+      <h2 class="screenshots-title">Screenshots</h2>
+      <div class="screenshots-grid">
+        <div class="screenshot-wrap">
+          <img src="/images/dorifto-screen1.png" alt="Dorifto screenshot 1" loading="lazy" />
+          <p class="media-caption">The track. It's longer than it looks.</p>
+        </div>
+        <div class="screenshot-wrap">
+          <img src="/images/dorifto-screen2.png" alt="Dorifto screenshot 2" loading="lazy" />
+          <p class="media-caption">The controls panel. WASD + handbrake.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <span>WillDevBrook<a href="/chatbot" class="secret-link">.</a> <span class="visit-count" id="visit-count"></span></span>
+    <span>
+      <a href="https://github.com/FuciTF2" target="_blank">GitHub</a>
+      &nbsp;·&nbsp;
+      <a href="https://x.com/WillDBrook" target="_blank">Twitter / X</a>
+    </span>
+  </footer>
+
+  <script src="/js/nav.js"></script>
+  <script>
+    fetch('/api/visits')
+      .then(r => r.json())
+      .then(d => {
+        if (d.count) {
+          const el = document.getElementById('visit-count');
+          if (el) el.textContent = '· ' + Number(d.count).toLocaleString() + ' visits';
+        }
+      })
+      .catch(() => {});
+  </script>
+</body>
+</html>

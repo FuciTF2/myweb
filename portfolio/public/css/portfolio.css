@@ -180,6 +180,17 @@
   gap: 0.3rem;
 }
 
+.repo-project-link {
+  font-family: var(--font-head);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-left: auto;
+  transition: opacity 0.15s;
+}
+
+.repo-project-link:hover { opacity: 0.75; }
+
 /* Skeletons */
 .repo-skeleton {
   background: var(--bg-2);
